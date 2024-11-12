@@ -19,11 +19,9 @@ def main():
                     x, y = event.pos
                     row = x // 32
                     col = y // 32
-                    print(row, col)
                     if row == mole_row and col == mole_col:
                         mole_row = random.randrange(0, 20)
                         mole_col = random.randrange(0, 16)
-                        print(mole_row, mole_col)
 
             screen.fill("light green")
 
@@ -35,7 +33,7 @@ def main():
                 pygame.draw.line(screen, "black", (i * 32, 0), (i * 32, 512))
 
             #Draw Mole
-            screen.blit(mole_image, mole_image.get_rect(topleft = (mole_row * 32, mole_col * 32)))
+            screen.blit(mole_image, mole_image.get_rect(topleft = (mole_row * 32 + 2.5, mole_col * 32 + 2.5)))
 
             pygame.display.flip()
             clock.tick(60)
