@@ -3,8 +3,8 @@ import random
 
 def main():
     try:
+        #Sets game up
         pygame.init()
-        # You can draw the mole with this snippet:
         mole_image = pygame.image.load("mole.png")
         mole_row = 0
         mole_col = 0
@@ -15,6 +15,7 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                #Moves Mole when clicked on
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = event.pos
                     row = x // 32
